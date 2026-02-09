@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, serif;
+}
+
+body {
+  height: 100vh;
+  background: url("assets/love-bg.jpg.jpeg") center/cover no-repeat fixed;
+  overflow: hidden;
+  color: #fff;
+}
+
+
+/* Overlay */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+#startBtn {
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  border: 1px solid #ffb3c1;
+  background: none;
+  color: #ffb3c1;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* Message */
+
+.message {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+}
+
+.message p {
+  opacity: 0;
+  margin: 15px 0;
+  font-size: 1.4rem;
+  animation: fadeIn 2s forwards;
+
+  text-shadow: 0 0 12px rgba(255, 179, 193, 0.4);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* Hearts */
+
+.hearts span {
+  position: absolute;
+  bottom: -20px;
+  font-size: 18px;
+  color: rgba(255, 105, 135, 0.7);
+  animation: floatUp 8s linear infinite;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 0; }
+  20% { opacity: 1; }
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* Music Button */
+
+#musicBtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 18px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid #ffb3c1;
+  color: #ffb3c1;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* Center heart */
+.heart {
+  font-size: 40px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.birds {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  width: 120px;
+  animation: floatBirds 6s ease-in-out infinite;
+}
+
+@keyframes floatBirds {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ===============================
+   WAVING ROMANTIC TEXT
+================================ */
+
+.wave p {
+  animation: 
+    fadeIn 2s forwards,
+    waveFloat 6s ease-in-out infinite,
+    colorShift 6s ease-in-out infinite;
+
+  will-change: transform, color;
+}
+
+
+/* Slight delay for each line (still in unison) */
+.wave p:nth-child(1) { animation-delay: 0s; }
+.wave p:nth-child(2) { animation-delay: 0.3s; }
+.wave p:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes waveFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes colorShift {
+  0% {
+    color: #ffffff;
+  }
+  50% {
+    color: #ffb3c1;
+  }
+  100% {
+    color: #ffffff;
+  }
+}
