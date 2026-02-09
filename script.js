@@ -2,6 +2,7 @@ const startBtn = document.getElementById("startBtn");
 const overlay = document.querySelector(".overlay");
 const heartsContainer = document.querySelector(".hearts");
 const music = document.getElementById("bgMusic");
+const startBtn = document.getElementById("startBtn");
 const musicBtn = document.getElementById("musicBtn");
 
 let isPlaying = false;
@@ -36,3 +37,4 @@ function createHeart() {
 
   setTimeout(() => heart.remove(), 10000);
 }
+
